@@ -8,7 +8,6 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 #import plotly.express as px
-import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="My Cig 90 days sales Prediction",
