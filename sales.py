@@ -133,9 +133,9 @@ if uploaded_file:
         pred = np.ceil(pred)
         pred_90j = pd.DataFrame(abs(pred), columns=['Predicted V90J'])
         ven_90j = pred_90j['Predicted V90J'] + get_90j['Vendus 60j']
+        # , pd.DataFrame(abs(pred_90j), columns=['Predicted V90J'])
         new_prediction = pd.concat(
-            [name, cat, decl, pd.DataFrame(abs(pred_90j), columns=['Predicted V90J']), get_90j['Vendus 60j'],
-             pd.DataFrame(ven_90j, columns=['Vendus 90j']), get_90j['Stock']], axis=1)
+            [name, cat, decl, get_90j['Vendus 60j'], pd.DataFrame(ven_90j, columns=['Vendus 90j']), get_90j['Stock']], axis=1)
         st.dataframe(new_prediction)
         # res = pd.concat([name, cat, decl, pd.DataFrame(pred, columns=['Predicted V90J'])], axis=1)
         # st.write(res)
